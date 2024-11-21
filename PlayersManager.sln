@@ -3,7 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayersManager", "PlayersManager\PlayersManager.csproj", "{06868902-C054-4C9D-90C9-56CC6515E593}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlayersManager", "PlayersManager\PlayersManager.csproj", "{06868902-C054-4C9D-90C9-56CC6515E593}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{E4A2D892-AA57-4B10-AFF2-5DD1DB989DDA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{CA87A4F7-29FB-43EE-ABB1-647E84615598}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{AB07C9C2-B9AF-486B-80AF-7F62F3D7DB03}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{6CA4E5EE-F7C8-4482-8291-D4EBA114406D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisPlayerApplication", "TennisPlayerApplication\TennisPlayerApplication.csproj", "{5D2D6F7B-8FD8-452F-865C-3405F532E23A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisPlayerDomain", "TennisPlayerDomain\TennisPlayerDomain.csproj", "{66653B5E-9EFF-4EAC-B30F-BE82C66A961F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisPlayerInfrastructure", "TennisPlayerInfrastructure\TennisPlayerInfrastructure.csproj", "{31002D86-C9B1-4A29-B862-65A6335B0C9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +29,27 @@ Global
 		{06868902-C054-4C9D-90C9-56CC6515E593}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06868902-C054-4C9D-90C9-56CC6515E593}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{06868902-C054-4C9D-90C9-56CC6515E593}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D2D6F7B-8FD8-452F-865C-3405F532E23A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D2D6F7B-8FD8-452F-865C-3405F532E23A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D2D6F7B-8FD8-452F-865C-3405F532E23A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D2D6F7B-8FD8-452F-865C-3405F532E23A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66653B5E-9EFF-4EAC-B30F-BE82C66A961F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66653B5E-9EFF-4EAC-B30F-BE82C66A961F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66653B5E-9EFF-4EAC-B30F-BE82C66A961F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66653B5E-9EFF-4EAC-B30F-BE82C66A961F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31002D86-C9B1-4A29-B862-65A6335B0C9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31002D86-C9B1-4A29-B862-65A6335B0C9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31002D86-C9B1-4A29-B862-65A6335B0C9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31002D86-C9B1-4A29-B862-65A6335B0C9B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06868902-C054-4C9D-90C9-56CC6515E593} = {6CA4E5EE-F7C8-4482-8291-D4EBA114406D}
+		{5D2D6F7B-8FD8-452F-865C-3405F532E23A} = {E4A2D892-AA57-4B10-AFF2-5DD1DB989DDA}
+		{66653B5E-9EFF-4EAC-B30F-BE82C66A961F} = {CA87A4F7-29FB-43EE-ABB1-647E84615598}
+		{31002D86-C9B1-4A29-B862-65A6335B0C9B} = {AB07C9C2-B9AF-486B-80AF-7F62F3D7DB03}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8380F05A-6A5F-49CB-AE0A-65B0EB356AE2}
