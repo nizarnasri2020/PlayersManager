@@ -54,7 +54,8 @@ namespace TennisPlayerApplication.Services
                     Points = tennisPlayer.Data?.Points ?? 0,
                     Weight = tennisPlayer.Data?.Weight ?? 0,
                     Height = tennisPlayer.Data?.Height ?? 0,
-                    Age = tennisPlayer.Data?.Age ?? 0
+                    Age = tennisPlayer.Data?.Age ?? 0,
+                    Last = tennisPlayer.Data?.Last ?? new List<int>()
                 };
             }
             catch (Exception ex)

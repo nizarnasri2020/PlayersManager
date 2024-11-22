@@ -45,7 +45,7 @@ namespace TennisPlayerDomain.Entities
 
         public int Age { get; set; }
     
-        public List<int> Last { get; set; }
+        public List<int> Last { get; set; } 
     }
     public class PlayerList
     {
