@@ -119,8 +119,8 @@ namespace TennisPlayerInfrastructure.Repositories
             }
             catch (Exception ex)
             {
+                _logger.LogError($"Exception occured when trying to delete player. Exception {ex.Message}");
 
-               
             }
         }
 

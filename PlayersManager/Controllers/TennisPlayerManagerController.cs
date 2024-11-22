@@ -70,6 +70,33 @@ namespace PlayersManager.Controllers
             }
 
         }
+
+
+        [HttpDelete("DeletePlayerById/{id}")]
+        public async Task<IActionResult> DeletePlayerById(int id)
+        {
+            try
+            {
+                var player = await _playerService.GetTennisPlayerById(id);
+                if (player == null)
+                {
+                    _logger.LogWarning($"Tennis Player with Id {id} not found");
+                    return NotFound();
+                }
+
+                await _playerService.DeleteTennisPlayer(id);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Exception occurred while trying to delete tennis player with id {id}.Exception {ex.Message}");
+                return StatusCode(500);
+
+            }
+          
+        }
+
+
         #endregion
 
 
