@@ -48,6 +48,28 @@ namespace PlayersManager.Controllers
             }
            
         }
+
+        [HttpGet("GetPlayerById/{id}")]
+        public async Task<ActionResult<List<TennisPlayerDTO>>> GetPlayersById(int id)
+        {
+            try
+            {
+                var player = await _playerService.GetTennisPlayerById(id);
+                if (player == null)
+                {
+                    return NotFound();
+                }
+                return Ok(player);
+
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Exception occurred while getting tennis player with id {id}.Exception {ex.Message}");
+                return StatusCode(500);
+            }
+
+        }
         #endregion
 
 
