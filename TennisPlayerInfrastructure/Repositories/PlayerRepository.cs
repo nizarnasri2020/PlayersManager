@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +12,7 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using TennisPlayerDomain.Entities;
 using TennisPlayerDomain.Interfaces;
+using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace TennisPlayerInfrastructure.Repositories
 {
@@ -19,6 +22,11 @@ namespace TennisPlayerInfrastructure.Repositories
         private string _dataSetUri;
         private HttpClient _httpClient;
         private ILogger<PlayerRepository> _logger;
+        private JsonSerializerSettings _settings = new JsonSerializerSettings
+        {
+            // Ensures case-sensitive deserialization
+            ContractResolver = new DefaultContractResolver()
+        };
         #endregion
 
         #region Constructor 
@@ -31,15 +39,17 @@ namespace TennisPlayerInfrastructure.Repositories
         #endregion
 
         #region Methods
-        public async Task<List<TennisPlayer>> GetAllPlayersAsync()
+        public async Task<List<TennisPlayer>> GetAllTennisPlayersAsync()
         {
             try
             {
+               
                 // Get Data From Provided Uri 
-                var dataResponse = await _httpClient.GetAsync(_dataSetUri);
-                var tennisPlayers = JsonSerializer.Deserialize<List<TennisPlayer>>(dataResponse.ToString());
+                var dataResponse = await _httpClient.GetStringAsync(_dataSetUri);
+               
+                var tennisPlayers = JsonConvert.DeserializeObject<PlayerList> (dataResponse, _settings);
 
-                return tennisPlayers;
+                return tennisPlayers!=null ? tennisPlayers.Players : null;
             }
             catch (Exception ex)
             {
@@ -49,17 +59,17 @@ namespace TennisPlayerInfrastructure.Repositories
           
         }
 
-        public async Task<TennisPlayer> GetPlayerByIdAsync(int id)
+        public async Task<TennisPlayer> GetTennisPlayerByIdAsync(int id)
         {
             try
             {
-                var tennisPlayers = await GetAllPlayersAsync();
+                var tennisPlayers = await GetAllTennisPlayersAsync();
                 if (tennisPlayers!= null )
                 {
                     var tennisPlayer = tennisPlayers.FirstOrDefault(p=>p.Id==id);
                     if (tennisPlayer!= null)
                     {
-                        _logger.LogInformation($"Tennis Player {tennisPlayer.FirstName} with Id {id} is found");
+                        _logger.LogInformation($"Tennis Player {tennisPlayer.Firstname} with Id {id} is found");
                     }
                     else
                     {
@@ -80,11 +90,11 @@ namespace TennisPlayerInfrastructure.Repositories
             }  
         }
 
-        public async Task DeletePlayerAsync(int id)
+        public async Task DeleteTennisPlayerAsync(int id)
         {
             try
             {
-                var tennisPlayers = await GetAllPlayersAsync();
+                var tennisPlayers = await GetAllTennisPlayersAsync();
                 if (tennisPlayers != null)
                 {
                     var PlayerToBeDeleted = tennisPlayers.FirstOrDefault(p=>p.Id==id);

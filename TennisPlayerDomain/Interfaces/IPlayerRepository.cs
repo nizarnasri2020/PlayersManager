@@ -9,7 +9,7 @@ namespace TennisPlayerDomain.Interfaces
 {
     public interface IPlayerRepository
     {
-        Task<List<TennisPlayer>> GetTennisPlayersAsync();
+        Task<List<TennisPlayer>> GetAllTennisPlayersAsync();
         Task<TennisPlayer> GetTennisPlayerByIdAsync(int id);
         Task DeleteTennisPlayerAsync(int id);
     }
