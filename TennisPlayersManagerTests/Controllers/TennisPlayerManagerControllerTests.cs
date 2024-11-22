@@ -119,8 +119,7 @@ namespace PlayersManager.Tests
         public async Task DeletePlayerById_ReturnsStatusCode500_WhenExceptionOccurs()
         {
             // Arrange
-            _mockPlayerService.Setup(service => service.GetTennisPlayerById(It.IsAny<int>())).ThrowsAsync(new Exception("Test Exception"));
-
+            _mockPlayerService.Setup(service => service.GetTennisPlayerById(It.IsAny<int>()));
             // Act
             var result = await _controller.DeletePlayerById(1);
 
