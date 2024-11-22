@@ -16,6 +16,10 @@ using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace TennisPlayerInfrastructure.Repositories
 {
+    /// <summary>
+    /// PlayerRepository is a repository that interacts with an external dataset to manage tennis player information.
+    /// PlayerRepository provides methods for retrieving all tennis players, retrieving a specific player by ID, and deleting a player.
+    /// </summary>
     public class PlayerRepository : IPlayerRepository
     {
         #region Attributes
@@ -39,6 +43,10 @@ namespace TennisPlayerInfrastructure.Repositories
         #endregion
 
         #region Methods
+        /// <summary>
+        /// Retrieves  all tennis players asynchronously from an external datasource.
+        /// </summary>
+        /// <returns>List Of tennis players, or null if data cannot be retreived or deserialized</returns>
         public async Task<List<TennisPlayer>> GetAllTennisPlayersAsync()
         {
             try
@@ -53,12 +61,16 @@ namespace TennisPlayerInfrastructure.Repositories
             }
             catch (Exception ex)
             {
-                _logger.LogError($"Exception Occured when Loading DataSet. Exception {ex.Message}");
+                _logger.LogError($"Exception Occurred when Loading DataSet. Exception {ex.Message}");
                 return null;
             }
           
         }
-
+        /// <summary>
+        /// Retrieves a specific tennis player by id asynchronously.
+        /// </summary>
+        /// <param name="id">The identifier of the player to retreive</param>
+        /// <returns>Tennis player if found, or null if not found</returns>
         public async Task<TennisPlayer> GetTennisPlayerByIdAsync(int id)
         {
             try
@@ -90,6 +102,11 @@ namespace TennisPlayerInfrastructure.Repositories
             }  
         }
 
+
+        /// <summary>
+        /// Deletes a tennis player by ID asynchronously from the datasource
+        /// </summary>
+        /// <param name="id">The identifier of the tennis player to delete</param>
         public async Task DeleteTennisPlayerAsync(int id)
         {
             try
@@ -127,11 +144,6 @@ namespace TennisPlayerInfrastructure.Repositories
 
 
         #endregion
-
-
-
-
-
 
 
 

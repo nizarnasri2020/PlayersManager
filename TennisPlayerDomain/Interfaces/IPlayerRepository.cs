@@ -7,6 +7,9 @@ using TennisPlayerDomain.Entities;
 
 namespace TennisPlayerDomain.Interfaces
 {
+    /// <summary>
+    /// This interface defines the contract for data access operations to tennis players.
+    /// </summary>
     public interface IPlayerRepository
     {
         Task<List<TennisPlayer>> GetAllTennisPlayersAsync();

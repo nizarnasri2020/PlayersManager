@@ -7,6 +7,9 @@ using TennisPlayerApplication.DTOs;
 
 namespace TennisPlayerApplication.Interfaces
 {
+    /// <summary>
+    ///  This Interface defines the contract for tennis player operations in the application.
+    /// </summary>
     public interface IPlayerService
     {
         Task<List<TennisPlayerDTO>> GetAllTennisPlayers();

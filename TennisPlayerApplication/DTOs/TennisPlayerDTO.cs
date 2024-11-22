@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace TennisPlayerApplication.DTOs
 {
+    /// <summary>
+    /// DTO (Data Transfer Object ) for tennis player . 
+    /// </summary>
     public class TennisPlayerDTO
     {
         public int Id { get; set; }

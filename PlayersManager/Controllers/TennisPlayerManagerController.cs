@@ -4,6 +4,9 @@ using TennisPlayerApplication.Interfaces;
 
 namespace PlayersManager.Controllers
 {
+    /// <summary>
+    /// TennisPlayerManager Controller responsible for managing tennis players. Provides endpoints that allows users to retrieve and delete tennis players .
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class TennisPlayerManagerController : ControllerBase
@@ -24,6 +27,10 @@ namespace PlayersManager.Controllers
         #endregion
 
         #region Endpoints
+        /// <summary>
+        /// This endpoint retrieves all tennis players .
+        /// </summary>
+        /// <returns>List of tennis players sorted by player id </returns>
         [HttpGet("GetAllPlayers")]
         public async Task<ActionResult<List<TennisPlayerDTO>>> GetAllPlayers()
         {
@@ -48,7 +55,11 @@ namespace PlayersManager.Controllers
             }
            
         }
-
+        /// <summary>
+        /// This endpoint retrieves specific tennis player by ID
+        /// </summary>
+        /// <param name="id">ID of player to retrive</param>
+        /// <returns>The Tennis Player with the provided ID oe Not Found id the player is not found </returns>
         [HttpGet("GetPlayerById/{id}")]
         public async Task<ActionResult<List<TennisPlayerDTO>>> GetPlayersById(int id)
         {
@@ -71,7 +82,11 @@ namespace PlayersManager.Controllers
 
         }
 
-
+        /// <summary>
+        /// This endpoint delete tennis player by unique id
+        /// </summary>
+        /// <param name="id">ID of player to delete</param>
+        /// <returns>NoContent if the deletion is successful, or NotFound if the player is not found</returns>
         [HttpDelete("DeletePlayerById/{id}")]
         public async Task<IActionResult> DeletePlayerById(int id)
         {

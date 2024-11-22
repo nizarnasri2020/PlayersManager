@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace TennisPlayerDomain.Entities
 {
+    /// <summary>
+    /// Class represents personal and statistical data for tennis player.
+    /// </summary>
     public class TennisPlayer
     {
         public int Id { get; set; }
@@ -18,11 +21,17 @@ namespace TennisPlayerDomain.Entities
         public string Picture { get; set; }
         public TennisPlayerInformation Data { get; set; }
     }
+    /// <summary>
+    /// Class represents country information for a tennis player.
+    /// </summary>
     public class Country
     {
         public string Picture { get; set; }
         public string Code { get; set; }
     }
+    /// <summary>
+    /// Class represents statistical information about a tennis player.
+    /// </summary>
     public class  TennisPlayerInformation 
     {
 

@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{6CA4E5EE-F7C8-4482-8291-D4EBA114406D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisPlayerApplication", "TennisPlayerApplication\TennisPlayerApplication.csproj", "{5D2D6F7B-8FD8-452F-865C-3405F532E23A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TennisPlayerApplication", "TennisPlayerApplication\TennisPlayerApplication.csproj", "{5D2D6F7B-8FD8-452F-865C-3405F532E23A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisPlayerDomain", "TennisPlayerDomain\TennisPlayerDomain.csproj", "{66653B5E-9EFF-4EAC-B30F-BE82C66A961F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TennisPlayerDomain", "TennisPlayerDomain\TennisPlayerDomain.csproj", "{66653B5E-9EFF-4EAC-B30F-BE82C66A961F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TennisPlayerInfrastructure", "TennisPlayerInfrastructure\TennisPlayerInfrastructure.csproj", "{31002D86-C9B1-4A29-B862-65A6335B0C9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TennisPlayerInfrastructure", "TennisPlayerInfrastructure\TennisPlayerInfrastructure.csproj", "{31002D86-C9B1-4A29-B862-65A6335B0C9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
