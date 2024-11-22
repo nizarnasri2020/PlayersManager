@@ -1,7 +1,15 @@
+using TennisPlayerDomain.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+
+builder.Services.Configure<DatasetConfig>(
+    builder.Configuration.GetSection("DatasetConfig"));
+
+// Register HttpClient
+builder.Services.AddHttpClient();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
