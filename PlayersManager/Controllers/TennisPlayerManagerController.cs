@@ -11,19 +11,45 @@ namespace PlayersManager.Controllers
 
         #region Attributes
         private IPlayerService _playerService;
-
+        private  ILogger<TennisPlayerManagerController> _logger;
         #endregion
 
         #region Constructor
-        public TennisPlayerManagerController(IPlayerService playerService)
+        public TennisPlayerManagerController(IPlayerService playerService, ILogger<TennisPlayerManagerController> logger)
         {
             _playerService = playerService;
+            _logger = logger;
         }
 
         #endregion
 
+        #region Endpoints
+        [HttpGet("GetAllPlayers")]
+        public async Task<ActionResult<List<TennisPlayerDTO>>> GetAllPlayers()
+        {
+            try
+            {
+                var players = await _playerService.GetAllTennisPlayers();
+                if (players != null)
+                {
+                    return Ok(players);
+                }
+                else
+                {
+                    return NotFound();
+                }
+                
+              
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Exception occurred while getting tennis players.Exception {ex.Message}");
+                return StatusCode(500);
+            }
+           
+        }
+        #endregion
 
-      
 
 
 
